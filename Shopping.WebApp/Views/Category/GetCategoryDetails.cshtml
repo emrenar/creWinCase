@@ -1,0 +1,48 @@
+﻿@using static Shopping.WebApp.Application.CategoryService.GetCategoryWithProducts.GetCategoryDetailsApplication
+
+@model List<GetCategoryDetailsViewModel>
+@{
+    ViewData["Title"] = "GetCategoryDetails";
+}
+
+<h1>GetCategoryDetails</h1>
+
+<table class="table table-hover">
+    <tr>
+       
+        <th>Title</th>     
+        <th>Description</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Rating</th>
+        <th>Discount Percentage</th>
+        <th>Brand</th>
+        <th>Category Name</th>
+        
+    </tr>
+
+    @foreach (var x in Model)
+    {
+
+
+        <tr>
+            
+            <td>@x.Title</td>
+            <td>@x.Description</td>
+            <td>
+                <img src="@x.ProductImage" style="width:165px; height:130px;" />
+            </td>
+            <td>@x.Price$</td>
+            <td>@x.Stock</td>
+            <td>@x.Rating</td>
+            <td>@x.DiscountPercentage</td>
+            <td>@x.Brand</td>
+            <td>@x.CategoryName</td>
+             
+           
+        </tr>
+
+
+    }
+</table>

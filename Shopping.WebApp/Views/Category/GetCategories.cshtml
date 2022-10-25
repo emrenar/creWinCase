@@ -1,0 +1,41 @@
+﻿@using static Shopping.WebApp.Application.CategoryService.GetCategories.GetCategoriesApplication
+@model List<GetCategoriesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<body>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Category Name</th>
+            <th>Statu</th>
+            <th>Details</th>
+           
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.CategoryName</td>
+                <td>@item.CategoryStatu</td>
+                
+                <td><a href="/Category/GetCategoryDetails/@item.Id" class="btn btn-warning">Category Details</a></td>
+              
+                
+            </tr>
+        }
+    </table>
+   
+</body>
+</html>
+
